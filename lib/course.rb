@@ -12,7 +12,7 @@ class Course
   end
 
   def full?
-    if @students.count > 2
+    if @students.count >= 2
       return true
     end
   end

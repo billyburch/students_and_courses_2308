@@ -37,7 +37,6 @@ RSpec.describe Course do
     student2 = Student.new({name: "Jordan", age: 29})  
     course.enroll(student1)  
     course.enroll(student2)  
-    course.students
     expect(course.full?).to eq(true)
   end
 
