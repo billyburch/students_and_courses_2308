@@ -1,23 +1,25 @@
 class Student
-attr_reader :name, :age, :scores
+attr_reader :name, :age, :scores, :grade
   
   def initialize(attributes)
     @name = attributes.fetch(:name)
     @age = attributes.fetch(:age)
     @scores = []
+    @grade = nil
   end
 
   def log_score(score)
     @scores << score
   end
 
-  def grade(score_array)
-    score_array = @scores
+  def average(scores)
+    scores = @scores
     sum = 0
-    score_array.each do |score|
-      sum += score
+    scores.each do |element|
+      sum += element
     end
-    grade = sum.to_f / score_array.length
-    return grade
+    average = sum.to_f / scores.length
+    @grade = average
   end
+  
 end
